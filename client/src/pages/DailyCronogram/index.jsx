@@ -28,7 +28,7 @@ const DailyCronogram = () => {
                         dailyCronogram.map((daily) => (
                             <Card key={daily.id}>
                                 <b>{daily.course.name}</b>
-                                <p><b>Tutor: </b>{daily.instructor ? `${daily.instructor.firstName} ${daily.instructor.lastName}` : <p style={{ color: '#f72585' }}>No tutor is assigned to this course</p>}</p>
+                                <p style={{display:'flex'}}><b>Tutor: </b>{daily.instructor ? ` ${daily.instructor.firstName} ${daily.instructor.lastName}` : <p style={{ color: '#f72585', marginLeft:5 }}>No tutor is assigned to this course</p>}</p>
                                 <p><b>Start Date: </b>{daily.startDate}</p>
                                 <p><b>Hour: </b>{daily.hour} hr</p>
                                 <p><b>Duration: </b>{daily.duration} {daily.duration === 1 ? 'day' : 'days'}</p>
