@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+body {
+	margin: 0;
+	font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	background-color: #eee;
+	word-break: break-word;
+}
+
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	background-color: #fafafa;
+	padding: 16px;
+	margin-bottom: 3em;
+}
+
+.mta{
+	margin-top: auto !important;
+}
