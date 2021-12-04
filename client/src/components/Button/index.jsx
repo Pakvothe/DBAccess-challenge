@@ -30,10 +30,11 @@ const StyledButton = styled.button`
     cursor: pointer;
     max-width: 300px;
 	border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
     &:hover {
         color: #fafafa;
-        background-color: ${({ color, fill }) => fill ? (color === 'primary' ? '#6b07ad' : '#c91566') : (color === 'primary' ? '#7209b7' : '#f72585')};
+        background-color: ${({ color, fill }) => fill ? (color === 'primary' ? '#58068f' : '#c91566') : (color === 'primary' ? '#7209b7' : '#f72585')};
         outline: 2px solid  ${({ color }) => color === 'primary' ? '#7209b7' : '#f72585'};
     }
 
