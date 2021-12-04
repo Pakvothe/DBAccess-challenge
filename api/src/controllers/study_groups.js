@@ -1,4 +1,4 @@
-const { Instructor, Course, Student, StudyGroup } = require('../models');
+const { Instructor, Course, Student, StudyGroup, StudyGroupStudent } = require('../models');
 
 const getStudyGroups = async (_, res) => {
     res.status(200).json(await StudyGroup.findAll());

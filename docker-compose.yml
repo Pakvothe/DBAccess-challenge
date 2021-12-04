@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+   database:
+      image: "postgres:latest"
+      ports:
+         - "5433:5432"
+      environment:
+         POSTGRES_USER: postgres
+         POSTGRES_PASSWORD: 12345
+         POSTGRES_DB: dbaccess
+      volumes:
+         - ./postgresql/data:/var/lib/postgresql/data
+   api:
+      image: node
+      build:
+         context: ./api
+      volumes:
+         - /api/node_modules
+         - ./api/src:/src
+      ports:
+         - "3001:3001"
+      environment:
+         DB_PORT: 5432
+         DB_HOST: database
+         DB_NAME: dbaccess
+         DB_USER: postgres
+         DB_PASSWORD: 12345
+         PORT: 3001
+      depends_on:
+         - database
+   client:
+      image: react
+      build:
+         context: ./client/
+      ports:
+         - "3000:3000"
+      environment:
+         NODE_OPTIONS: --openssl-legacy-provider
