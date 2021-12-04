@@ -50,15 +50,15 @@ const StyledNavbar = styled.nav`
 
 			a{
 				margin-bottom: 10px;
-				font-size: 18px;
+				font-size: 22px;
 			}
 			div {
 				flex-direction: column-reverse;
 
 				a {
 					margin-left: 0;
-					margin-bottom: 5px;
-					font-size: 14px;
+					margin-bottom: 8px;
+					font-size: 18px;
 				}
 			}
 		}
