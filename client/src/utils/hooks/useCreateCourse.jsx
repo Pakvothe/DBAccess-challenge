@@ -13,7 +13,7 @@ export const useCreateCourse = () => {
         e.preventDefault();
         setLoading(true)
         axios
-            .post('http://localhost:3001/courses', { name: course })
+            .post('https://dbaccess-challenge.herokuapp.com/courses', { name: course })
             .then((res) => {
                 setCourses((prev) => [...prev, res.data]);
                 toast.success('Course created successfully')

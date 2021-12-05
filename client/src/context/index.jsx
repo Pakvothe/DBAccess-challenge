@@ -14,19 +14,19 @@ export const AppProvider = ({ children }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		axios.get('http://localhost:3001/courses').then((courses) => {
+		axios.get('https://dbaccess-challenge.herokuapp.com/courses').then((courses) => {
 			setCourses(courses.data);
 			setLoading(false);
 		});
-		axios.get('http://localhost:3001/instructors').then((instructors) => {
+		axios.get('https://dbaccess-challenge.herokuapp.com/instructors').then((instructors) => {
 			setInstructors(instructors.data);
 			setLoading(false);
 		});
-		axios.get('http://localhost:3001/students').then((students) => {
+		axios.get('https://dbaccess-challenge.herokuapp.com/students').then((students) => {
 			setStudents(students.data);
 			setLoading(false);
 		});
-		axios.get('http://localhost:3001/cohort').then((groups) => {
+		axios.get('https://dbaccess-challenge.herokuapp.com/cohort').then((groups) => {
 			setStudyGroups(groups.data);
 			setLoading(false);
 		});

@@ -1,6 +1,15 @@
 # DBAccess Challenge
 
-</br>
+The application is deployed at:
+
+
+Frontend:
+
+> https://dba-ccess-challenge-pakvothe.vercel.app/
+
+Backend:
+
+> https://dbaccess-challenge.herokuapp.com/
 
 ## Installation
 
@@ -18,6 +27,8 @@ git clone https://github.com/Pakvothe/DBAccess-challenge.git
 </br>
 
 ## Run the App with Docker
+
+In the master branch you have to do the following steps:
 
 > In the case of having a node version on the pc that is lower than 17, remove the following from "client" from the docker-compose.yml file at the root of the project:
 
@@ -50,7 +61,7 @@ Frontend:
 
 Backend:
 
-> http://localhost:3001/
+> https://localhost:3001/
 
 </br>
 

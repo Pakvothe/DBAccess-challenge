@@ -33,7 +33,7 @@ export const useCreateGroup = () => {
         e.preventDefault();
         setLoading(true)
 
-        axios.post('http://localhost:3001/cohort', { cohort }).then((res) => {
+        axios.post('https://dbaccess-challenge.herokuapp.com/cohort', { cohort }).then((res) => {
             setLoading(false)
             toast.success('Study group created successfully')
             navigate(`/courses/${cohort.courseId}`);

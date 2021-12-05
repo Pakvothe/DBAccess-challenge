@@ -23,7 +23,7 @@ const NewStudent = () => {
         e.preventDefault();
         setLoading(true)
         axios
-            .post('http://localhost:3001/students', { student })
+            .post('https://dbaccess-challenge.herokuapp.com/students', { student })
             .then((res) => {
                 setStudents((prev) => [...prev, res.data]);
                 setLoading(false)

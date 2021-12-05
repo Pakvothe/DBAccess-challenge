@@ -23,7 +23,7 @@ function Students() {
     const deleteStudent = (id) => {
         setLoading(true)
         axios
-            .delete(`http://localhost:3001/students/${id}`)
+            .delete(`https://dbaccess-challenge.herokuapp.com/students/${id}`)
             .then((res) => {
                 if (res) {
                     setStudents((prev) => prev.filter((c) => c.id !== id));

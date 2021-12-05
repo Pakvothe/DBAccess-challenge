@@ -17,7 +17,7 @@ const Courses = () => {
 
 	const deleteCourse = (id) => {
 		setLoading(true)
-		axios.delete(`http://localhost:3001/courses/${id}`).then((res) => {
+		axios.delete(`https://dbaccess-challenge.herokuapp.com/courses/${id}`).then((res) => {
 			if (res) {
 				setCourses((prev) => prev.filter((c) => c.id !== id))
 				setLoading(false)

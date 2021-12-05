@@ -10,7 +10,7 @@ export const useCourseManagement = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/courses/${id}`).then((course) => {
+        axios.get(`https://dbaccess-challenge.herokuapp.com/courses/${id}`).then((course) => {
             setGroups(course.data);
             setLoading(false);
         });
@@ -18,7 +18,7 @@ export const useCourseManagement = () => {
 
     const deleteStudyGroup = (cohort) => {
         setLoading(true)
-        axios.delete(`http://localhost:3001/cohort/${cohort.id}`).then((res) => {
+        axios.delete(`https://dbaccess-challenge.herokuapp.com/cohort/${cohort.id}`).then((res) => {
             if (res) {
                 setGroups((prev) => prev.filter((c) => c.id !== cohort.id));
                 setLoading(false)
@@ -33,7 +33,7 @@ export const useCourseManagement = () => {
     const removeTutor = (cohort) => {
         setLoading(true)
         axios
-            .delete(`http://localhost:3001/cohort/instructor/${cohort.id}/`)
+            .delete(`https://dbaccess-challenge.herokuapp.com/cohort/instructor/${cohort.id}/`)
             .then((res) => {
                 if (res) {
                     setGroups((prev) =>
@@ -51,7 +51,7 @@ export const useCourseManagement = () => {
     const handleChange = (e, cohort) => {
         setLoading(true)
         axios
-            .post(`http://localhost:3001/cohort/${cohort.id}/${e.target.value}`)
+            .post(`https://dbaccess-challenge.herokuapp.com/cohort/${cohort.id}/${e.target.value}`)
             .then((res) => {
                 if (res) {
                     setTutor('');

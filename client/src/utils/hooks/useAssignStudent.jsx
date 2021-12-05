@@ -18,7 +18,7 @@ export const useAssignStudent = () => {
 
     const getCourseStudyGroups = (id, name) => {
         setLoading(true)
-        axios.get(`http://localhost:3001/courses/${id}`).then((course) => {
+        axios.get(`https://dbaccess-challenge.herokuapp.com/courses/${id}`).then((course) => {
             setGroups(course.data);
             if (course.data.length) {
                 setShowGroups({ courseId: id, courseName: name, show: true, })
@@ -36,7 +36,7 @@ export const useAssignStudent = () => {
     const asignCourse = (groupId, studentId) => {
         setLoading(true)
         axios
-            .post(`http://localhost:3001/cohort/student/${groupId}/${studentId}`)
+            .post(`https://dbaccess-challenge.herokuapp.com/cohort/student/${groupId}/${studentId}`)
             .then((res) => {
                 if (res) {
                     setLoading(false);

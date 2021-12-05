@@ -23,7 +23,7 @@ const NewTutor = () => {
         e.preventDefault();
         setLoading(true)
         axios
-            .post('http://localhost:3001/instructors', { instructor })
+            .post('https://dbaccess-challenge.herokuapp.com/instructors', { instructor })
             .then((res) => {
                 setInstructors((prev) => [...prev, res.data]);
                 setLoading(false)

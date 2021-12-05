@@ -12,7 +12,7 @@ export const useTutorManagement = () => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`http://localhost:3001/instructors/${id}`).then((instructor) => {
+        axios.get(`https://dbaccess-challenge.herokuapp.com/instructors/${id}`).then((instructor) => {
             setGroup(instructor.data);
             setLoading(false);
         }).catch(err => {
@@ -24,7 +24,7 @@ export const useTutorManagement = () => {
     const removeTutorFromCourse = (cohort) => {
         setLoading(true)
         axios
-            .delete(`http://localhost:3001/cohort/instructor/${cohort.id}`)
+            .delete(`https://dbaccess-challenge.herokuapp.com/cohort/instructor/${cohort.id}`)
             .then((res) => {
                 if (res) {
                     setGroup((prev) => prev.filter((c) => c.id !== cohort.id));

@@ -16,7 +16,7 @@ export const useGetCronogram = () => {
 
     const getDailyCronogram = () => {
         setLoading(true)
-        axios.get(`http://localhost:3001/cohort/${todayDate}`).then((cohort) => {
+        axios.get(`https://dbaccess-challenge.herokuapp.com/cohort/${todayDate}`).then((cohort) => {
             setDailyCronogram(cohort.data)
             setLoading(false)
         }).catch((err) => {

@@ -17,7 +17,7 @@ function Tutor() {
     const deleteTutor = (id) => {
         setLoading(true)
         axios
-            .delete(`http://localhost:3001/instructors/${id}`)
+            .delete(`https://dbaccess-challenge.herokuapp.com/instructors/${id}`)
             .then((res) => {
                 if (res) {
                     setInstructors((prev) => prev.filter((c) => c.id !== id));

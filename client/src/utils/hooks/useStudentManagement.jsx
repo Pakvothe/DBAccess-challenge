@@ -12,7 +12,7 @@ export const useStudentManagement = () => {
 
     const getStudyGroups = useCallback(() => {
         setLoading(true)
-        axios.get(`http://localhost:3001/students/${id}`).then((student) => {
+        axios.get(`https://dbaccess-challenge.herokuapp.com/students/${id}`).then((student) => {
             setGroup(student.data.studyGroups);
             setLoading(false);
         }).catch(err => {
@@ -30,7 +30,7 @@ export const useStudentManagement = () => {
     const removeStudentFromCourse = (cohort) => {
         setLoading(true)
         axios
-            .delete(`http://localhost:3001/cohort/${cohort.id}/student/${id}`)
+            .delete(`https://dbaccess-challenge.herokuapp.com/cohort/${cohort.id}/student/${id}`)
             .then((res) => {
                 if (res) {
                     setGroup((prev) => prev.filter((c) => c.id !== cohort.id));
